@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+#ignore
+/node_modules
+/app/assets/javascripts/bundle.js
+/app/assets/javascripts/bundle.js.map
