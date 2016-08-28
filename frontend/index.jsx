@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 let documnetReady = () => {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-  )
+  let reactNode = document.getElementById('app');
+  if (reactNode){
+    ReactDOM.render(
+      <App />,
+      document.getElementById('app')
+    )
+  }
 }
 
 $(documnetReady)
