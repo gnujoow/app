@@ -1,4 +1,6 @@
 import React from 'react';
+import { PropTypes } from 'react';
+import { createPost } from '../actions/index';
 
 export default class TweetBox extends React.Component {
   render() {

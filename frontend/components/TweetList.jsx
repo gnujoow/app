@@ -11,15 +11,12 @@ class TweetList extends React.Component {
 
   render() {
     const { tweets } = this.props;
-    if(!tweets){
-      return <div>로오딩중우우웅...</div>
-    }
+    if(!tweets){ return <div>로오딩중우우웅...</div> }
     let tweet = tweets.map(tweet => <Tweet key={tweet.id} {...tweet} />)
-    console.log(tweet);
     return(
       <div>
         <ul className="collection">
-          {tweet}
+          { tweet }
         </ul>
       </div>
     )
