@@ -2,7 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTweets } from '../actions/index';
 
+import { List, ListItem, Divider } from 'material-ui';
+
+
 import Tweet from './Tweet';
+import MobileTearSheet from './MobileTearSheet';
 
 class TweetList extends React.Component {
   componentWillMount() {
@@ -12,13 +16,18 @@ class TweetList extends React.Component {
   render() {
     const { tweets } = this.props;
     if(!tweets){ return <div>로오딩중우우웅...</div> }
-    let tweet = tweets.map(tweet => <Tweet key={tweet.id} {...tweet} />)
-    return(
-      <div>
-        <ul className="collection">
-          { tweet }
-        </ul>
+    let tweet = tweets.map(
+      tweet =>
+      <div key={tweet.id}>
+        <Tweet key={tweet.id} {...tweet}/>
+        <Divider inset={true} />
       </div>
+    );
+
+    return(
+      <List>
+       { tweet }
+      </List>
     )
   }
 }
